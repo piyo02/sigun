@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5deb2
+-- version 4.6.6deb5ubuntu0.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 20, 2020 at 01:57 AM
--- Server version: 8.0.21-0ubuntu0.20.04.4
--- PHP Version: 7.4.3
+-- Generation Time: 31 Jan 2021 pada 10.41
+-- Versi Server: 5.7.32-0ubuntu0.18.04.1
+-- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,71 +23,75 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tmbarang`
+-- Struktur dari tabel `tmbarang`
 --
 
 CREATE TABLE `tmbarang` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `kode` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `id_kategori` int NOT NULL,
+  `id_kategori` int(11) NOT NULL,
   `satuan` varchar(20) NOT NULL,
-  `stok` int NOT NULL
+  `stok` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tmbarang`
+-- Dumping data untuk tabel `tmbarang`
 --
 
 INSERT INTO `tmbarang` (`id`, `kode`, `nama`, `id_kategori`, `satuan`, `stok`) VALUES
-(5, 'A-005', 'Xiaomi TV', 1, 'Buah', 65),
-(7, 'S-022', 'LG', 1, 'Buah', 10),
-(9, 'S-021', 'Samsung 21 Inch', 1, 'Buah', 80),
-(10, 'A-011', 'Toshiba 20 Inch', 1, 'Buah', 10),
-(11, '90AB', 'LCD TV Samsung', 1, 'Buah', 90),
-(12, 'F-010', 'Samsung 24 Inch', 1, 'Buah', 80),
-(13, 'A-001', 'Simbada', 3, 'Buah', 70),
-(14, 'M-001', 'MacBook Pro 15 Inch', 6, 'Buah', 14),
-(15, 'M-002', 'MacBook Pro 17 Inch', 6, 'Buah', 19),
-(16, 'C-001', 'Acer Aspire One 15 Inch', 8, 'Buah', 15),
-(17, 'C-002', 'Acer Aspire One 18 Inch', 8, 'Buah', 6),
-(18, 'A-002', 'Simbada Type C3', 3, 'Buah', 68),
-(19, 'S-001', 'Sharp TV', 1, 'Buah', 3);
+(1, 'S-0011', 'Samsung Galaxy M10', 1, 'Buah', 100),
+(2, 'S-0012', 'Samsung Galaxy A10s', 1, 'Buah', 10),
+(3, 'S-0013', 'Samsung Galaxy A20s', 1, 'Buah', 80),
+(4, 'S-0014', 'Samsung Galaxy M20', 1, 'Buah', 10),
+(5, 'S-0015', 'Samsung Galaxy A30', 1, 'Buah', 90),
+(6, 'S-0016', 'Samsung Galaxy A51', 1, 'Buah', 80),
+(7, 'S-0017', 'Samsung Galaxy S10e', 1, 'Buah', 72),
+(8, 'S-0018', 'Samsung Galaxy A9', 1, 'Buah', 68),
+(9, 'S-0019', 'Samsum Galaxy Note 9', 1, 'Buah', 100),
+(20, 'V-0021', 'Vivo Y30i', 3, 'Buah', 100),
+(21, 'V-0022', 'Vivo Y30', 3, 'Buah', 100),
+(22, 'V-0023', 'Vivo Y51', 3, 'Buah', 100),
+(23, 'V-0024', 'Vivo Y20s', 3, 'Buah', 100),
+(24, 'V-0025', 'Vivo Y50', 3, 'Buah', 100),
+(25, 'O-0031', 'Oppo A3', 2, 'Buah', 250),
+(26, 'O-0032', 'Oppo A53', 2, 'Buah', 210),
+(27, 'O-0033', 'Oppo Reno4', 2, 'Buah', 500),
+(28, 'O-0034', 'Oppo A92', 2, 'Buah', 300),
+(29, 'O-0035', 'Oppo A33', 2, 'Buah', 200),
+(30, 'O-0036', 'Oppo A15', 2, 'Buah', 350),
+(31, 'V-0026', 'Vivo Y12', 3, 'Buah', 100),
+(32, 'O-0037', 'Oppo A23', 2, 'Buah', 200);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tmkategori`
+-- Struktur dari tabel `tmkategori`
 --
 
 CREATE TABLE `tmkategori` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `no_rak` int NOT NULL
+  `no_rak` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tmkategori`
+-- Dumping data untuk tabel `tmkategori`
 --
 
 INSERT INTO `tmkategori` (`id`, `nama`, `no_rak`) VALUES
-(1, 'TV', 1),
-(2, 'DVD', 2),
-(3, 'Sound System', 10),
-(4, 'Joy Stick', 5),
-(5, 'MacBook', 3),
-(6, 'MacBook Pro', 3),
-(7, 'MacBook Air', 3),
-(8, 'Laptop', 4);
+(1, 'Samsung', 1),
+(2, 'Oppo', 2),
+(3, 'Vivo', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tmpelanggan`
+-- Struktur dari tabel `tmpelanggan`
 --
 
 CREATE TABLE `tmpelanggan` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `kode` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -97,22 +99,22 @@ CREATE TABLE `tmpelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tmpelanggan`
+-- Dumping data untuk tabel `tmpelanggan`
 --
 
 INSERT INTO `tmpelanggan` (`id`, `kode`, `nama`, `alamat`, `no_telp`) VALUES
-(1, 'P001', 'ITC BSD', 'Jl. Pahlawan seribu', '0222'),
-(2, 'P002', 'WTC Matahari', 'Jl. Serpong', '0872727727'),
-(3, 'P003', 'BSD Plaza', 'Jl. Serpong', '08929292');
+(1, 'P001', 'GMT 1', 'Jl. Depan KFC', '0222'),
+(2, 'P002', 'Multimedia', 'Jl. Serpong', '0872727727'),
+(3, 'P003', 'Multimedia Mandonga', 'Jl. Serpong', '08929292');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tmpetugas`
+-- Struktur dari tabel `tmpetugas`
 --
 
 CREATE TABLE `tmpetugas` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -120,20 +122,20 @@ CREATE TABLE `tmpetugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tmpetugas`
+-- Dumping data untuk tabel `tmpetugas`
 --
 
 INSERT INTO `tmpetugas` (`id`, `nama`, `username`, `password`, `status`) VALUES
-(2, 'Rinaldi Pratama Putra', 'rinaldi', '$2a$10$HNNV04.aNn0WlCqU88tD0.AB7pz7Fq60jCctZXVSBrX184FmwrJzO', 'aktif');
+(2, 'Administrator', 'admin', '$2a$10$sTEznrrmKjltKWAiOAcaQOhzbACj7UGs93PfsXnxRVyyIIPO3.8FC', 'aktif');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tmsupplier`
+-- Struktur dari tabel `tmsupplier`
 --
 
 CREATE TABLE `tmsupplier` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `kode` varchar(10) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `alamat` varchar(200) NOT NULL,
@@ -141,30 +143,29 @@ CREATE TABLE `tmsupplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tmsupplier`
+-- Dumping data untuk tabel `tmsupplier`
 --
 
 INSERT INTO `tmsupplier` (`id`, `kode`, `nama`, `alamat`, `no_telp`) VALUES
-(1, 'S008', 'Apple Inc', 'Jl. Banjar, Kota banjarmasin', '0228192832'),
-(3, 'S005', 'Microsoft Inc', 'Jl. Pasir Kaliki', '08282828'),
-(4, 'S002', 'Lenovo Inc', 'Jakarta', '08282828'),
-(5, 'S004', 'Acer Inc', 'Bandung', '0222');
+(1, 'S001', 'PT Samsung Electronics Indonesia', 'Jl. Jababeka Raya Blok. F29-33, Cikarang, Jawa Barat 17530, Indonesia', '(021) 89837114'),
+(2, 'V002', 'PT Vivo Mobile Indonesia', 'Jalan Bhumimas VIII No. 10A-10D, Talaga, Cikupa, Talaga, Cikupa, Tangerang, Banten 15710, Indonesia', '(021) 29005635'),
+(3, 'O003', 'PT. SBB OPPO', 'Jalan Raya Benua Indah, Pabuaran Tumpeng, Karawaci, Pabuaran Tumpeng, Karawaci, Kota Tangerang, Banten 15112, Indonesia', '0222');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trbarang_keluar`
+-- Struktur dari tabel `trbarang_keluar`
 --
 
 CREATE TABLE `trbarang_keluar` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `tgl` date NOT NULL,
-  `id_petugas` int NOT NULL,
-  `id_pelanggan` int NOT NULL
+  `id_petugas` int(11) NOT NULL,
+  `id_pelanggan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `trbarang_keluar`
+-- Dumping data untuk tabel `trbarang_keluar`
 --
 
 INSERT INTO `trbarang_keluar` (`id`, `tgl`, `id_petugas`, `id_pelanggan`) VALUES
@@ -174,23 +175,26 @@ INSERT INTO `trbarang_keluar` (`id`, `tgl`, `id_petugas`, `id_pelanggan`) VALUES
 (4, '2016-12-19', 2, 1),
 (5, '2016-12-19', 2, 2),
 (6, '2016-12-22', 2, 1),
-(7, '2016-12-22', 2, 2);
+(7, '2016-12-22', 2, 2),
+(8, '2021-01-16', 2, 1),
+(9, '2021-01-18', 2, 1),
+(10, '2021-01-18', 2, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trbarang_keluar_detail`
+-- Struktur dari tabel `trbarang_keluar_detail`
 --
 
 CREATE TABLE `trbarang_keluar_detail` (
-  `id` int NOT NULL,
-  `id_barang_keluar` int NOT NULL,
-  `id_barang` int NOT NULL,
-  `jumlah` int NOT NULL
+  `id` int(11) NOT NULL,
+  `id_barang_keluar` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `trbarang_keluar_detail`
+-- Dumping data untuk tabel `trbarang_keluar_detail`
 --
 
 INSERT INTO `trbarang_keluar_detail` (`id`, `id_barang_keluar`, `id_barang`, `jumlah`) VALUES
@@ -206,23 +210,26 @@ INSERT INTO `trbarang_keluar_detail` (`id`, `id_barang_keluar`, `id_barang`, `ju
 (10, 5, 17, 11),
 (11, 6, 13, 10),
 (12, 6, 18, 12),
-(13, 7, 5, 15);
+(13, 7, 5, 15),
+(14, 8, 5, 6),
+(15, 9, 20, 900),
+(16, 10, 9, 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trbarang_masuk`
+-- Struktur dari tabel `trbarang_masuk`
 --
 
 CREATE TABLE `trbarang_masuk` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `tgl` date NOT NULL,
-  `id_petugas` int NOT NULL,
-  `id_supplier` int NOT NULL
+  `id_petugas` int(11) NOT NULL,
+  `id_supplier` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `trbarang_masuk`
+-- Dumping data untuk tabel `trbarang_masuk`
 --
 
 INSERT INTO `trbarang_masuk` (`id`, `tgl`, `id_petugas`, `id_supplier`) VALUES
@@ -230,23 +237,28 @@ INSERT INTO `trbarang_masuk` (`id`, `tgl`, `id_petugas`, `id_supplier`) VALUES
 (4, '2016-12-19', 2, 1),
 (5, '2016-12-19', 2, 1),
 (6, '2016-12-19', 2, 5),
-(7, '2016-12-22', 2, 1);
+(7, '2016-12-22', 2, 1),
+(8, '2021-01-16', 2, 3),
+(9, '2021-01-16', 2, 3),
+(10, '2021-01-16', 2, 1),
+(11, '2021-01-18', 2, 1),
+(12, '2021-01-18', 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trbarang_masuk_detail`
+-- Struktur dari tabel `trbarang_masuk_detail`
 --
 
 CREATE TABLE `trbarang_masuk_detail` (
-  `id` int NOT NULL,
-  `id_barang_masuk` int NOT NULL,
-  `id_barang` int NOT NULL,
-  `jumlah` int NOT NULL
+  `id` int(11) NOT NULL,
+  `id_barang_masuk` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `trbarang_masuk_detail`
+-- Dumping data untuk tabel `trbarang_masuk_detail`
 --
 
 INSERT INTO `trbarang_masuk_detail` (`id`, `id_barang_masuk`, `id_barang`, `jumlah`) VALUES
@@ -259,7 +271,12 @@ INSERT INTO `trbarang_masuk_detail` (`id`, `id_barang_masuk`, `id_barang`, `juml
 (11, 6, 16, 5),
 (12, 6, 17, 6),
 (13, 7, 14, 4),
-(14, 7, 15, 5);
+(14, 7, 15, 5),
+(15, 8, 13, 2),
+(16, 9, 5, 5),
+(17, 10, 19, 7),
+(18, 11, 1, 36),
+(19, 12, 9, 100);
 
 --
 -- Indexes for dumped tables
@@ -328,66 +345,56 @@ ALTER TABLE `trbarang_masuk_detail`
 -- AUTO_INCREMENT for table `tmbarang`
 --
 ALTER TABLE `tmbarang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `tmkategori`
 --
 ALTER TABLE `tmkategori`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tmpelanggan`
 --
 ALTER TABLE `tmpelanggan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `tmpetugas`
 --
 ALTER TABLE `tmpetugas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tmsupplier`
 --
 ALTER TABLE `tmsupplier`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `trbarang_keluar`
 --
 ALTER TABLE `trbarang_keluar`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `trbarang_keluar_detail`
 --
 ALTER TABLE `trbarang_keluar_detail`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `trbarang_masuk`
 --
 ALTER TABLE `trbarang_masuk`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `trbarang_masuk_detail`
 --
 ALTER TABLE `trbarang_masuk_detail`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tmbarang`
+-- Ketidakleluasaan untuk tabel `tmbarang`
 --
 ALTER TABLE `tmbarang`
   ADD CONSTRAINT `myKey` FOREIGN KEY (`id_kategori`) REFERENCES `tmkategori` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
